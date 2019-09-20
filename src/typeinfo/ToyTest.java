@@ -1,6 +1,9 @@
 //: typeinfo/toys/ToyTest.java
 // Testing class Class.
 package typeinfo;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 import static net.mindview.util.Print.*;
 
 interface HasBatteries {}
@@ -36,6 +39,16 @@ public class ToyTest {
       print("Can't find FancyToy");
       System.exit(1);
     }
+//      Toy.class.getDeclaredConstructor(int.class).newInstance(1);
+//    } catch (InstantiationException e) {
+//      e.printStackTrace();
+//    } catch (InvocationTargetException e) {
+//      e.printStackTrace();
+//    } catch (NoSuchMethodException e) {
+//      e.printStackTrace();
+//    } catch (IllegalAccessException e) {
+//      e.printStackTrace();
+//    }
     printInfo(c);	
     for(Class face : c.getInterfaces())
       printInfo(face);
