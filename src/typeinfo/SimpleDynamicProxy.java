@@ -33,6 +33,7 @@ public class SimpleDynamicProxy {
         iface.somethingElse("bonobo");
     }
     public static void main(String args[]){
+
         RealObject real = new RealObject();
         consumer(real);
         //insert a proxy and call again

@@ -1,4 +1,4 @@
-package Generics.ex2;
+package generics.ex2;
 
 public class SixTuple<A, B, C, D, E, F> extends FiveTuple<A, B, C, D, E> {
     public final F sixth;

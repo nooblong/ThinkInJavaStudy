@@ -1,4 +1,4 @@
-package Generics.ex1;
+package generics.ex1;
 class Automobile{}
 public class Holder3 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Generics.ex4;
+package generics.ex4;
 
 public interface Selector {
     boolean end();

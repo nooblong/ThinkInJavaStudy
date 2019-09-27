@@ -1,4 +1,4 @@
-package Generics.ex1;
+package generics.ex1;
 class Robot{
     private String name;
     public Robot(String name){this.name = name;}

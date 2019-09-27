@@ -1,4 +1,4 @@
-package Generics.ex2;
+package generics.ex2;
 class Amphibian{}
 class Vehicle{}
 public class TupleTest {

@@ -1,4 +1,4 @@
-package Generics.ex2;
+package generics.ex2;
 
 public class ThreeTuple<A,B,C> extends TwoTuple<A,B> {
     public final C third;

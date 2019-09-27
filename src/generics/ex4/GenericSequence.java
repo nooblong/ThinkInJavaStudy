@@ -1,4 +1,4 @@
-package Generics.ex4;
+package generics.ex4;
 
 import java.util.ArrayList;
 import java.util.List;

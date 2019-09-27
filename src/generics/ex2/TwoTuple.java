@@ -1,4 +1,4 @@
-package Generics.ex2;
+package generics.ex2;
 
 public class TwoTuple<A,B> {
     public final A first;
