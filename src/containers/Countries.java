@@ -5,7 +5,7 @@ import java.util.*;
 import static net.mindview.util.Print.*;
 
 public class Countries {
-    private static final String[][] DATA = {
+    public static final String[][] DATA = {
             // Africa
             {"ALGERIA", "Algiers"}, {"ANGOLA", "Luanda"},
             {"BENIN", "Porto-Novo"}, {"BOTSWANA", "Gaberone"},
@@ -133,8 +133,7 @@ public class Countries {
 
     // Use AbstractMap by implementing entrySet()
     private static class FlyweightMap extends AbstractMap<String, String> {
-        private static class Entry
-                implements Map.Entry<String, String> {
+        private static class Entry implements Map.Entry<String, String> {
             int index;
 
             Entry(int index) {
@@ -200,8 +199,7 @@ public class Countries {
             }
         }
 
-        private static Set<Map.Entry<String, String>> entries =
-                new EntrySet(DATA.length);
+        private static Set<Map.Entry<String, String>> entries = new EntrySet(DATA.length);
 
         public Set<Map.Entry<String, String>> entrySet() {
             return entries;
@@ -219,11 +217,11 @@ public class Countries {
 
     private static Map<String, String> map = new FlyweightMap();
 
-    private static Map<String, String> capitals() {
+    public static Map<String, String> capitals() {
         return map; // The entire map
     }
 
-    private static Map<String, String> capitals(int size) {
+    public static Map<String, String> capitals(int size) {
         return select(size); // A partial map
     }
 
