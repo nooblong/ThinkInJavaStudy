@@ -234,7 +234,7 @@ public class Countries {
     }
 
     // A partial list:
-    private static List<String> names(int size) {
+    static List<String> names(int size) {
         return new ArrayList<>(select(size).keySet());
     }
 
