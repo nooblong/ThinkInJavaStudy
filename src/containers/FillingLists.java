@@ -1,14 +1,13 @@
 package containers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-class StringAddress {
+class Address {
     private String s;
 
-    public StringAddress(String s) {
+    public Address(String s) {
         this.s = s;
     }
 
@@ -20,11 +19,11 @@ class StringAddress {
 
 public class FillingLists {
     public static void main(String[] args) {
-        List<StringAddress> list = new ArrayList<>(
-                Collections.nCopies(4, new StringAddress("Hello"))
+        List<Address> list = new ArrayList<>(
+                Collections.nCopies(4, new Address("Hello"))
         );
         System.out.println(list);
-        Collections.fill(list, new StringAddress("World!"));
+        Collections.fill(list, new Address("World!"));
         System.out.println(list);
     }
 }
