@@ -1,0 +1,37 @@
+1: // io/ReverseLines7.java
+2: // TIJ4 Chapter IO, Exercise 7, page 928
+3: /* Open a text file so that you can read the file one line at a time. Read
+4: * each line as a String and place that String object into a LinkedList.
+5: * Print all of the lines in the LinkedList in reverse order.
+6: */
+7: 
+8: /* My solution to one of the exercises in
+9: * Thinking in Java 4th Edition (by Bruce Eckel).
+10: * It compiles and runs correctly using JDK 1.6.0
+11: * @author Greg Gordon
+12: * @author www.greggordon.org
+13: * January, 2008
+14: */
+15: 
+16: import java.io.*;
+17: import java.util.*;
+18: 
+19: public class ReverseLines7 {
+20: 	// Throw exceptions to console:
+21: 	public static String readAndReverse(String filename) throws IOException {
+22: 		// Reading input by lines:
+23: 		BufferedReader in = new BufferedReader(new FileReader(filename));
+24: 		String s;
+25: 		LinkedList<String> list = new LinkedList<String>();
+26: 		StringBuilder sb = new StringBuilder(); // For output String
+27: 		while((s = in.readLine()) != null)
+28: 			list.add(s); // Add each line to LinkedList
+29: 		while(list.peekLast() != null) // While there is a lase line
+30: 			sb.append(list.pollLast() + "\n"); // Removes line
+31: 		in.close();
+32: 		return sb.toString();
+33: 	}
+34: 	public static void main(String[] args) throws IOException {
+35: 		System.out.print(readAndReverse("ReverseLines7.java"));
+36: 	}
+37: }
