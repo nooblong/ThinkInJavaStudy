@@ -20,5 +20,7 @@ public class BufferToText {
         System.out.println(bf.asCharBuffer());
         bf.rewind();
         System.out.println(bf);
+
+        System.out.println();
     }
 }
