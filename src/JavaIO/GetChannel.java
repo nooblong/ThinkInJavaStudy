@@ -5,13 +5,15 @@ import java.io.FileOutputStream;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class GetChannel {
     public static final int BSIZE = 1024;
 
     public static void main(String[] args) throws Exception {
         FileChannel fc = new FileOutputStream("test.txt").getChannel();
-        fc.write(ByteBuffer.wrap("Some text 一些 中文 ".getBytes()));
+        fc.write(ByteBuffer.wrap(("Some text " + "一些中文").getBytes(StandardCharsets.UTF_8)));
         fc.close();
         //add to end
         fc = new RandomAccessFile("test.txt", "rw").getChannel();
@@ -25,5 +27,6 @@ public class GetChannel {
         buff.flip();
         while (buff.hasRemaining())
             System.out.print((char)buff.get());
+
     }
 }
