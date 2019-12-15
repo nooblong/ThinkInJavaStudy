@@ -25,7 +25,8 @@ public class BufferToText {
         System.out.println(bf);
 
         fc = new FileOutputStream("data2.txt").getChannel();
-        fc.write(ByteBuffer.wrap("Some text".getBytes("UTF-16BE")));
+        bf = ByteBuffer.allocate(4);
+        fc.write(ByteBuffer.wrap("Some text哈哈".getBytes("UTF-16BE")));
         fc.close();
         fc = new FileInputStream("data2.txt").getChannel();
         bf.clear();
