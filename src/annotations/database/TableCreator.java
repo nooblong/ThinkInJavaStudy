@@ -5,7 +5,11 @@ import java.lang.reflect.*;
 import java.util.*;
 
 public class TableCreator {
+//    static int i = 0;
     public static void main(String[] args) throws Exception {
+
+        String tableCreate = null;
+
         if (args.length < 1) {
             System.out.println("arguments: annotated classes");
             System.exit(0);
@@ -25,6 +29,7 @@ public class TableCreator {
             List<String> columnDefs = new ArrayList<String>();
 
             for (Field field : cl.getDeclaredFields()) {
+//                System.out.println(i++);
                 String columnName = null;
                 Annotation[] anns = field.getDeclaredAnnotations();
                 if (anns.length < 1) {
@@ -66,11 +71,12 @@ public class TableCreator {
                 for (String columnDef : columnDefs)
                     createCommand.append("\n    " + columnDef + ",");
                 // Remove trailing comma
-                String tableCreate = createCommand.substring(0, createCommand.length() - 1) + ");";
-//                System.out.println("Table Creation SQL for " + className + " is :\n" + tableCreate);
-                System.out.println(tableCreate);
+                tableCreate = createCommand.substring(0, createCommand.length() - 1) + ");";
+//                System.out.println(tableCreate);
             }
         }
+        System.out.println(tableCreate);
+        JDBC.execute(tableCreate);
     }
 
     private static String getConstraints(Constraints con) {
