@@ -1,5 +1,5 @@
 package annotations;
 
 
-public class InterfaceExtractorProcessor implements Annotatio{
+public class InterfaceExtractorProcessor{
 }

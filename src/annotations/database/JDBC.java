@@ -23,7 +23,9 @@ public class JDBC {
         Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/p?serverTimezone=UTC", "root", "123456");
+            Class.forName("java.util.Arrays");
+            connection = DriverManager.getConnection("jdbc:mysql://134.175.52.170:3306/?serverTimezone=UTC", "root",
+                    "12345678");
 //            s.execute("insert into class(sname) values(\"shabi\");");
 //            ResultSet rs = s.executeQuery("select * from class;");
         } catch (Exception e){

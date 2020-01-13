@@ -4,6 +4,7 @@ import java.lang.annotation.*;
 import java.lang.reflect.*;
 import java.util.*;
 
+
 public class TableCreator {
 //    static int i = 0;
     public static void main(String[] args) throws Exception {
@@ -76,7 +77,7 @@ public class TableCreator {
             }
         }
         System.out.println(tableCreate);
-        JDBC.execute(tableCreate);
+//        JDBC.execute(tableCreate);
     }
 
     private static String getConstraints(Constraints con) {
