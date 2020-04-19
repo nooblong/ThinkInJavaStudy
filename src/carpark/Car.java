@@ -8,7 +8,7 @@ public class Car {
     public int id;
     public int arriveTime;
     public int leaveTime;
-    public int keepTime;
+    public int waitTime = 0;
 
     public Car setArriveTime(int arriveTime) {
         this.arriveTime = arriveTime;
@@ -26,7 +26,7 @@ public class Car {
                 "id=" + id +
                 ", arriveTime=" + arriveTime +
                 ", leaveTime=" + leaveTime +
-                ", keepTime=" + keepTime +
+                ", keepTime=" + waitTime +
                 '}';
     }
 }
