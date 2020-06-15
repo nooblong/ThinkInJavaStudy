@@ -45,7 +45,7 @@ class CountingMapData5 extends AbstractMap<Integer, String> {
 
         @Override
         public Iterator<Map.Entry<Integer, String>> iterator() {
-            return new Iterator<>() {
+            return new Iterator<Map.Entry<Integer, String>>() {
                 private Entry entry = new Entry(-1);
 
                 @Override

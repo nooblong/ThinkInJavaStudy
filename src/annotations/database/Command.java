@@ -18,8 +18,8 @@ public class Command {
             bis = new BufferedInputStream(p.getInputStream());
             StringBuilder sb = new StringBuilder();
             String line = null;
-            byte[] bytes = bis.readAllBytes();
-            sb.append(new String(bytes, Charset.forName("GBK"))).append("\n");
+//            byte[] bytes = bis.readAllBytes();
+//            sb.append(new String(bytes, Charset.forName("GBK"))).append("\n");
             System.out.println(sb.toString());
         } catch (Exception e) {
             e.printStackTrace();

@@ -11,7 +11,7 @@ public class ListPerformance {
     static List<Test<List<Integer>>> tests = new ArrayList<Test<List<Integer>>>();
     static List<Test<LinkedList<Integer>>> qTests = new ArrayList<Test<LinkedList<Integer>>>();
     static {
-        tests.add(new Test<>("add") {
+        tests.add(new Test<List<Integer>>("add") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int listSize = tp.size;
@@ -23,7 +23,7 @@ public class ListPerformance {
                 return loops * listSize;
             }
         });
-        tests.add(new Test<>("get") {
+        tests.add(new Test<List<Integer>>("get") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops * reps;
                 int listSize = list.size();
@@ -32,7 +32,7 @@ public class ListPerformance {
                 return loops;
             }
         });
-        tests.add(new Test<>("set") {
+        tests.add(new Test<List<Integer>>("set") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops * reps;
                 int listSize = list.size();
@@ -41,7 +41,7 @@ public class ListPerformance {
                 return loops;
             }
         });
-        tests.add(new Test<>("iteradd") {
+        tests.add(new Test<List<Integer>>("iteradd") {
             int test(List<Integer> list, TestParam tp) {
                 final int LOOPS = 1000000;
                 int half = list.size() / 2;
@@ -51,7 +51,7 @@ public class ListPerformance {
                 return LOOPS;
             }
         });
-        tests.add(new Test<>("insert") {
+        tests.add(new Test<List<Integer>>("insert") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 for(int i = 0; i < loops; i++)
@@ -59,7 +59,7 @@ public class ListPerformance {
                 return loops;
             }
         });
-        tests.add(new Test<>("remove") {
+        tests.add(new Test<List<Integer>>("remove") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int size = tp.size;
@@ -73,7 +73,7 @@ public class ListPerformance {
             }
         });
         // Tests for queue behavior:
-        qTests.add(new Test<>("addFirst") {
+        qTests.add(new Test<LinkedList<Integer>>("addFirst") {
             int test(LinkedList<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int size = tp.size;
@@ -85,7 +85,7 @@ public class ListPerformance {
                 return loops * size;
             }
         });
-        qTests.add(new Test<>("addLast") {
+        qTests.add(new Test<LinkedList<Integer>>("addLast") {
             int test(LinkedList<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int size = tp.size;
@@ -98,7 +98,7 @@ public class ListPerformance {
             }
         });
         qTests.add(
-                new Test<>("rmFirst") {
+                new Test<LinkedList<Integer>>("rmFirst") {
                     int test(LinkedList<Integer> list, TestParam tp) {
                         int loops = tp.loops;
                         int size = tp.size;
@@ -111,7 +111,7 @@ public class ListPerformance {
                         return loops * size;
                     }
                 });
-        qTests.add(new Test<>("rmLast") {
+        qTests.add(new Test<LinkedList<Integer>>("rmLast") {
             int test(LinkedList<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int size = tp.size;
@@ -145,7 +145,7 @@ public class ListPerformance {
             Tester.defaultParams = TestParam.array(args);
         // Can only do these two tests on an array:
         Tester<List<Integer>> arrayTest =
-                new Tester<>(null, tests.subList(1, 3)){
+                new Tester<List<Integer>>(null, tests.subList(1, 3)){
                     // This will be called before each test. It
                     // produces a non-resizeable array-backed list:
                     @Override protected
