@@ -2,6 +2,7 @@ package jdbc;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.mchange.v2.c3p0.DataSources;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,5 +24,11 @@ public class Main {
         ComboPooledDataSource ds = new ComboPooledDataSource();
         Connection conn = ds.getConnection();
         System.out.println(conn);
+
+        JdbcTemplate template = new JdbcTemplate(ds);
+
+        String sql = "update students set Ssex = ? where Sno = 0602001";
+        template.update(sql,"狗");
+        
     }
 }

@@ -2,7 +2,7 @@
     <!-- 默认配置，如果没有指定使用则使用这个配置 -->
     <default-config>
         <property name="driverClass">com.mysql.jdbc.Driver</property>
-        <property name="jdbcUrl">jdbc:mysql://localhost:3306/test</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/test?serverTimezone=UTC</property>
         <property name="user">root</property>
         <property name="password">123456</property>
         <property name="checkoutTimeout">3000</property>
