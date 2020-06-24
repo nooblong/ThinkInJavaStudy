@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<students>
+    <student number="1">
+        <name>fuck</name>
+        <age>12</age>
+        <sex>male</sex>
+    </student>
+    <student number="2">
+        <name>jack</name>
+        <age>12</age>
+        <sex>female</sex>
+    </student>
+</students>
