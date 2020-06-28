@@ -57,5 +57,6 @@
     <orderEntry type="library" name="druid-1.1.22 (2)" level="project" />
     <orderEntry type="library" name="c3p0-0.9.5.5" level="project" />
     <orderEntry type="library" name="jquery-1.12.4" level="application" />
+    <orderEntry type="library" name="jackson-annotations-2.11.1 (2)" level="project" />
   </component>
 </module>

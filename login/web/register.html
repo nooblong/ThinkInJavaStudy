@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        $("input[name = username]").blur(function () {
+            //get username
+            var username = $(this).val();
+            $.get("/FindUserServlet", {username:username}, function (data) {
+                //userExsit:true/false
+                if (data.userExsit){
+                    $("#username_s").html(data.msg);
+                    $("#username_s").css("color","red");
+                } else {
+                    $("#username_s").html(data.msg);
+                    $("#username_s").css("color","green");
+                }
+            },"json")
+        })
+    })
+</script>
+<form>
+    <input type="text" name="username" placeholder="username">
+    <span id="username_s"></span>
+    <br>
+    <input type="password" name="password" placeholder="password">
+    <br>
+    <input type="submit" value="register">
+</form>
+</body>
+</html>

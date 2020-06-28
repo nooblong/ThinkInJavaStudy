@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script
+        src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+<input type="button" value="send request" onclick="fun()">
+<script>
+    function fun() {
+        $.ajax({
+            url:"/AjaxServlet",
+            type:"POST",
+            data:{"username":"jack", "age":23},
+            success:function (data) {
+                alert(data);
+            }
+        })
+    }
+</script>
+</body>
+</html>
