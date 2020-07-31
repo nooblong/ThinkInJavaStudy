@@ -26,7 +26,7 @@ public class FindUserServlet extends HttpServlet {
             map.put("userExist", false);
             map.put("msg", "可!");
         }
-        response.setContentType("text/html;charset=utf-8");
+        response.setContentType("application/json;charset=utf-8");
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(response.getWriter(), map);
     }
